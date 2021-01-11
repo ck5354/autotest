@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public interface UserDao {
+public interface ScenarioVariable {
     //@Select("select * from scene__comp_variable")
     List getJsonResult();
 

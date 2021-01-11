@@ -1,18 +1,18 @@
 package com.autotest.test.service;
 
-import com.autotest.test.dao.UserDao;
+import com.autotest.test.dao.ScenarioVariable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserService {
+public class VariableService {
     @Autowired
-    public UserDao userDao;
+    public ScenarioVariable scenarioVariable;
 
     public List getJsonResult(){
-        List demos = userDao.getJsonResult();
+        List demos = scenarioVariable.getJsonResult();
         return demos;
     }
 

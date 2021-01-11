@@ -2,13 +2,12 @@ package com.autotest.test.controller;
 
 
 import com.autotest.test.entity.SysResult;
-import com.autotest.test.service.UserService;
+import com.autotest.test.service.VariableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 
@@ -25,7 +24,7 @@ public class AutotestController {
     }
 
     @Autowired
-    UserService userService;
+    VariableService userService;
 
     @RequestMapping("/getSelect")
     @ResponseBody
