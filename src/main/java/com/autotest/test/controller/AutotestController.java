@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 public class AutotestController {
     @RequestMapping("/hello")
     public String home() {
-        return "hello";
+        return "hello1";
     }
 
     @RequestMapping("/run")
