@@ -24,12 +24,12 @@ public class AutotestController {
     }
 
     @Autowired
-    VariableService userService;
+    VariableService variableService;
 
     @RequestMapping("/getSelect")
     @ResponseBody
     public SysResult getJsonResult(){
-        return SysResult.ok(userService.getJsonResult());
+        return SysResult.ok(variableService.getJsonResult());
     }
 
 }
