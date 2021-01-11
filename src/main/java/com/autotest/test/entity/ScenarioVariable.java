@@ -12,7 +12,7 @@ import java.io.Serializable;
 
 public class ScenarioVariable implements Serializable {
     private Integer id;
-    private String scenario_id;
+    private Integer scenario_id;
     private String variables;
 
 }
