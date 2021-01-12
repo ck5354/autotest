@@ -11,7 +11,7 @@ import java.util.Date;
 @Accessors(chain = true)    //链式结构
 @EntityScan
 
-public class Api implements Serializable {
+public class ApiEntity implements Serializable {
     private Integer id;
     private Integer app;
     private String name;

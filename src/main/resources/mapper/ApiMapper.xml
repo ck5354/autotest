@@ -2,11 +2,11 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.autotest.test.dao.ApiMapper">
 
-    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.Api">
+    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
         select * from scenario_variable where id = #{id}
     </select>
 
-    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.Api">
+    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
         select * from scenario_variable
         <where>
             <if test="id != null">
@@ -19,7 +19,7 @@
     </select>
 
 
-    <insert id="saveApi" parameterType="com.autotest.test.entity.Api">
+    <insert id="saveApi" parameterType="com.autotest.test.entity.ApiEntity">
         INSERT INTO api (id, app,name,describer,url,request_method,,param,content_Type,header,create_time)
         VALUES (#{id}, 值2,....)
     </insert>

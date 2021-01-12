@@ -1,7 +1,7 @@
 package com.autotest.test.controller;
 
 
-import com.autotest.test.entity.Api;
+import com.autotest.test.entity.ApiEntity;
 import com.autotest.test.entity.SysResult;
 import com.autotest.test.service.ApiService;
 import com.autotest.test.service.VariableService;
@@ -39,7 +39,7 @@ public class AutotestController {
 
     @RequestMapping("/query/api")
     @ResponseBody
-    public Api queryApi() {
+    public ApiEntity queryApi() {
         return apiService.qureyApi(1);
     }
 

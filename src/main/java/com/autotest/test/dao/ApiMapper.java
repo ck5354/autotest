@@ -1,6 +1,6 @@
 package com.autotest.test.dao;
 
-import com.autotest.test.entity.Api;
+import com.autotest.test.entity.ApiEntity;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -8,14 +8,14 @@ import java.util.List;
 @Mapper
 public interface ApiMapper {
 
-    Api queryApi(int id);
+    ApiEntity queryApi(int id);
 
-    int saveApi(Api api);
+    int saveApi(ApiEntity apiEntity);
 
     int deleteApi(int id);
 
-    int updateApi(Api api);
+    int updateApi(ApiEntity apiEntity);
 
-    List<Api> queryApis(Api api);
+    List<ApiEntity> queryApis(ApiEntity apiEntity);
 
 }
