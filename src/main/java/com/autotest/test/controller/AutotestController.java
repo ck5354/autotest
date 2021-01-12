@@ -1,7 +1,9 @@
 package com.autotest.test.controller;
 
 
+import com.autotest.test.entity.Api;
 import com.autotest.test.entity.SysResult;
+import com.autotest.test.service.ApiService;
 import com.autotest.test.service.VariableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,10 +28,19 @@ public class AutotestController {
     @Autowired
     VariableService variableService;
 
+    @Autowired
+    ApiService apiService;
+
     @RequestMapping("/getSelect")
     @ResponseBody
-    public SysResult getJsonResult(){
+    public SysResult getJsonResult() {
         return SysResult.ok(variableService.getJsonResult());
+    }
+
+    @RequestMapping("/query/api")
+    @ResponseBody
+    public Api queryApi() {
+        return apiService.qureyApi(1);
     }
 
 }

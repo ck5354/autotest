@@ -8,7 +8,6 @@ import java.util.List;
 
 @Component
 public interface ScenarioVariable {
-    //@Select("select * from scene__comp_variable")
     List getJsonResult();
 
 }
