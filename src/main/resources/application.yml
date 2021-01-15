@@ -1,0 +1,19 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8888
+
+spring:
+  datasource:
+    name: autotest
+    url: jdbc:mysql://59.110.222.201:3306/autotest
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver #mysql's driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml #classpath:
+  typeAliasesPackage: com.autotest.test.entity.*
+  configuration:
+    map-underscore-to-camel-case: true
+
