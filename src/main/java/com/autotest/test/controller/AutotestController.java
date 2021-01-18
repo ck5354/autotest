@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class AutotestController {
-    @RequestMapping("/hello")
+    @RequestMapping("/index")
     public String home() {
-        return "hello1";
+        return "index.html";
     }
 
     @RequestMapping("/run")
     public String autoRun(HttpServletRequest request) {
-        return "hello world!";
+        return "请输入正确的账户名密码";
     }
 
     @Autowired
@@ -33,8 +33,8 @@ public class AutotestController {
 
     @RequestMapping("/getSelect")
     @ResponseBody
-    public SysResult getJsonResult() {
-        return SysResult.ok(variableService.getJsonResult());
+    public SysResult getJsonResult2() {
+        return SysResult.ok(variableService.getJsonResult(2));
     }
 
     @RequestMapping("/query/api")
@@ -43,4 +43,15 @@ public class AutotestController {
         return apiService.qureyApi(1);
     }
 
+    @RequestMapping("/getInsert")
+    @ResponseBody
+    public SysResult queryInsert(){
+        return SysResult.ok(variableService.getInsertResult());
+    }
+
+    @RequestMapping("/getDelete")
+    @ResponseBody
+    public SysResult queryDelete(){
+        return SysResult.ok(variableService.getDeleteResult());
+    }
 }

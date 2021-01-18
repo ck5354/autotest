@@ -14,6 +14,4 @@ public class ApiService {
     public ApiEntity qureyApi(int id){
         return apiMapper.queryApi(id);
     }
-
-
 }
