@@ -1,7 +1,6 @@
 target/
 report/**
 target/**
-autotest_new/**
 autotest_new/
 test-output/
 test-output/**
