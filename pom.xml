@@ -48,6 +48,8 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
         </dependency>-->
 
+        <!--springboot-end-->
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -63,7 +65,7 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
-        <!--springboot-end-->
+
 
     </dependencies>
 </project>
