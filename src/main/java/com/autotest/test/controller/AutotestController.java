@@ -37,12 +37,6 @@ public class AutotestController {
         return SysResult.ok(variableService.getJsonResult(2));
     }
 
-    @RequestMapping("/query/api")
-    @ResponseBody
-    public ApiEntity queryApi() {
-        return apiService.qureyApi(1);
-    }
-
     @RequestMapping("/getInsert")
     @ResponseBody
     public SysResult queryInsert(){
@@ -54,4 +48,18 @@ public class AutotestController {
     public SysResult queryDelete(){
         return SysResult.ok(variableService.getDeleteResult());
     }
+
+    /*↓↓↓↓ @项目相关 ↓↓↓↓↓*/
+    @RequestMapping("/query/id")
+    @ResponseBody
+    public ApiEntity queryId() {
+        return apiService.qureyId(1);
+    }
+
+    @RequestMapping("/query/name")
+    @ResponseBody
+    public ApiEntity queryName() {
+        return apiService.queryName("1");
+    }
+
 }

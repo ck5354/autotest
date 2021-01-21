@@ -15,12 +15,14 @@ public class ApiEntity implements Serializable {
     private Integer id;
     private Integer app;
     private String name;
-    private String url;
-    private String header;
-    private String request_method;
-    private String param;
-    private String content_Type;
     private String describer;
+    private String scheme;
+    private String url;
+    private String request_method;
+    private String content_Type;
+    private String header;
+    private String param;
+    private String body;
     private Date create_time;
 
 }

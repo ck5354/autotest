@@ -11,7 +11,12 @@ public class ApiService {
     @Autowired
     public ApiMapper apiMapper;
 
-    public ApiEntity qureyApi(int id){
-        return apiMapper.queryApi(id);
+    public ApiEntity qureyId(int id){
+        return apiMapper.queryId(id);
+    }
+
+    public ApiEntity queryName(String name){
+        System.out.println(name);
+        return apiMapper.queryName(name);
     }
 }
