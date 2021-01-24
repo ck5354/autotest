@@ -28,5 +28,9 @@ public class ApiService {
         return apiMapper.queryCompose(url, requestMethod);
     }
 
+    public List<ApiEntity> queryPage() {
+        return apiMapper.queryPage();
+    }
+
 }
 

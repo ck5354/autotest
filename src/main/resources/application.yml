@@ -16,3 +16,9 @@ mybatis:
   typeAliasesPackage: com.autotest.test.entity.*
   configuration:
     map-underscore-to-camel-case: true
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
