@@ -12,13 +12,10 @@
             <if test="id != null">
                 id = #{id}
             </if>
-            <!--<if test="app != null">
-                app = #{app}
-            </if>-->
         </where>
     </select>
 
-    <select id="queryName" parameterType="int" resultType="com.autotest.test.entity.ApiEntity" >
+    <select id="queryName" parameterType="String" resultType="com.autotest.test.entity.ApiEntity" >
         select * from api
         <where>
             <if test="name != null">
@@ -27,6 +24,14 @@
         </where>
     </select>
 
+    <select id="queryCompose" parameterType="String" resultType="com.autotest.test.entity.ApiEntity" >
+        select * from api
+        <where>
+            <if test="url !=null and requestMethod != null" >
+                url=#{url} and request_method = #{requestMethod}
+            </if>
+        </where>
+    </select>
 
     <insert id="saveApi" parameterType="com.autotest.test.entity.ApiEntity">
         INSERT INTO scenario_variable VALUES (6,3,"doinsert")

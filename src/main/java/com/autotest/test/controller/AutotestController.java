@@ -5,14 +5,14 @@ import com.autotest.test.entity.ApiEntity;
 import com.autotest.test.entity.SysResult;
 import com.autotest.test.service.ApiService;
 import com.autotest.test.service.VariableService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
-
+@RequestMapping("Api")
 @RestController
 public class AutotestController {
     @RequestMapping("/index")
@@ -50,16 +50,22 @@ public class AutotestController {
     }
 
     /*↓↓↓↓ @项目相关 ↓↓↓↓↓*/
-    @RequestMapping("/query/id")
+    @RequestMapping("/queryId/{id}")
     @ResponseBody
-    public ApiEntity queryId() {
-        return apiService.qureyId(1);
+    public ApiEntity queryId(@PathVariable(name = "id")int id) {
+        return apiService.qureyId(id);
     }
 
-    @RequestMapping("/query/name")
+    @RequestMapping("/queryName/{name}")
     @ResponseBody
-    public ApiEntity queryName() {
-        return apiService.queryName("1");
+    public ApiEntity queryName(@PathVariable(name = "name")String name) {
+        return apiService.queryName(name);
+    }
+
+    @RequestMapping("/queryCompose")
+    @ResponseBody
+    public List queryCompose(@RequestParam(name = "url")String url, @RequestParam(name = "requestMethod")String requestMethod) {
+        return apiService.queryCompose(url,requestMethod);
     }
 
 }

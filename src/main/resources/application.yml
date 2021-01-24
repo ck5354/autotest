@@ -6,7 +6,7 @@ server:
 spring:
   datasource:
     name: autotest
-    url: jdbc:mysql://59.110.222.201:3306/autotest
+    url: jdbc:mysql://59.110.222.201:3306/autotest?useUnicode=true&characterEncoding=UTF-8 #问号拼接，支持中文查询
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver #mysql's driver
@@ -16,4 +16,3 @@ mybatis:
   typeAliasesPackage: com.autotest.test.entity.*
   configuration:
     map-underscore-to-camel-case: true
-

@@ -5,17 +5,36 @@
     <title>首页</title>
 </head>
 <body>
-<label>欢迎登陆最牛逼的系统(*￣︶￣*)</label>
-<br />
-<br />
-<form method="get" action="/getSelect">
-账号:<input /><br />
-密码:<input /><br /><br />
-<a href="https://www.jd.com" target="_blank"> 忘记密码??!</a>
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id = "login" value = "登陆" />
-&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" id = "register" value = "注册" />
 
-</form>
+<div>
+    <font color="red" size="5" face="楷体">
+    <label >欢迎登陆最牛逼的系统(*￣︶￣*)</label></font>
+</div>
 
+<br/>
+<br/>
+<form method="get" action="/queryCompose">
+    请求地址:&nbsp;<input type="text" name="url" value=""/>&nbsp;&nbsp;&nbsp;&nbsp;
+    请求方式:&nbsp;<input type="text" name="requestMethod" value=""/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" id="login" value="提交" onclick="display_alert()"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" id="register" value="重置"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.jd.com" > 想剁个手吗??!</a><br/><br/>
+    <script type="text/javascript">
+
+     window.alert = function(name){
+       var iframe = document.createElement("IFRAME");
+       iframe.style.display="none";
+       iframe.setAttribute("src", 'data:text/plain,');
+       document.documentElement.appendChild(iframe);
+       window.frames[0].window.alert(name);
+       iframe.parentNode.removeChild(iframe);
+    }
+
+    function display_alert()
+    {
+        alert("确认提交该接口吗？")
+    }
+    </script>
+</form><br/>
 </body>
 </html>

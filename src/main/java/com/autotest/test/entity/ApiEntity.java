@@ -18,11 +18,11 @@ public class ApiEntity implements Serializable {
     private String describer;
     private String scheme;
     private String url;
-    private String request_method;
-    private String content_Type;
+    private String requestMethod;
+    private String contentType;
     private String header;
     private String param;
     private String body;
-    private Date create_time;
+    private Date createTime;
 
 }
