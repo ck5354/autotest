@@ -13,70 +13,41 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-@RequestMapping("Api")
+@RequestMapping("api")
 @RestController
-public class AutotestController {
-    @RequestMapping("/index")
-    public String home() {
-        return "index.html";
-    }
+public class ApiController {
 
-    @RequestMapping("/run")
-    public String autoRun(HttpServletRequest request) {
-        return "请输入正确的账户名密码";
-    }
-
-    @Autowired
-    VariableService variableService;
 
     @Autowired
     ApiService apiService;
 
-    @RequestMapping("/getSelect")
-    @ResponseBody
-    public SysResult getJsonResult2() {
-        return SysResult.ok(variableService.getJsonResult(2));
-    }
 
-    @RequestMapping("/getInsert")
-    @ResponseBody
-    public SysResult queryInsert(){
-        return SysResult.ok(variableService.getInsertResult());
-    }
-
-    @RequestMapping("/getDelete")
-    @ResponseBody
-    public SysResult queryDelete(){
-        return SysResult.ok(variableService.getDeleteResult());
-    }
-
-    /*↓↓↓↓ @项目相关 ↓↓↓↓↓*/
     @RequestMapping("/queryId/{id}")
     @ResponseBody
-    public ApiEntity queryId(@PathVariable(name = "id")int id) {
+    public ApiEntity queryId(@PathVariable(name = "id") int id) {
         return apiService.qureyId(id);
     }
 
     @RequestMapping("/queryName/{name}")
     @ResponseBody
-    public ApiEntity queryName(@PathVariable(name = "name")String name) {
+    public ApiEntity queryName(@PathVariable(name = "name") String name) {
         return apiService.queryName(name);
     }
 
     @RequestMapping("/queryCompose")
     @ResponseBody
-    public List queryCompose(@RequestParam(name = "url")String url, @RequestParam(name = "requestMethod")String requestMethod) {
-        return apiService.queryCompose(url,requestMethod);
+    public List queryCompose(@RequestParam(name = "url") String url, @RequestParam(name = "requestMethod") String requestMethod) {
+        return apiService.queryCompose(url, requestMethod);
     }
 
     @ResponseBody
     @RequestMapping("/queryPage")
     public List<ApiEntity> queryPage(@RequestParam int pageNum, @RequestParam int pageSize) {
         // 设置分页查询参数
-        PageHelper.startPage(pageNum,pageSize);
+        PageHelper.startPage(pageNum, pageSize);
         List<ApiEntity> apiEntityList = apiService.queryPage();
 
-        for(ApiEntity apiEntity : apiEntityList) {
+        for (ApiEntity apiEntity : apiEntityList) {
             System.out.println("element : " + apiEntity);
         }
 
