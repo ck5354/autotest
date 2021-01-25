@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+
+<div>
+    <font color="red" size="5" face="楷体">
+    <label >欢迎登陆最牛逼的系统(*￣︶￣*)</label></font>
+</div>
+
+<br/>
+<br/>
+
+<form method="get" action="/Api/queryCompose" target="iframe_a">
+    请求地址:&nbsp;<input type="text" name="url" value=""/>&nbsp;&nbsp;&nbsp;&nbsp;
+    请求方式:&nbsp;<input type="text" name="requestMethod" value=""/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="submit" id="login" value="提交" onclick="display_alert()"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="reset" id="register" value="重置"/>&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="https://www.jd.com" > 想剁个手吗??!</a><br/></form>&nbsp;
+
+    <form method="get" action="/Api/queryPage">
+        <!--分页查询:&nbsp;<input name="pageNum" type="text" value="">&nbsp;&nbsp;<input name="pageSize" type="submit" value="2" >&nbsp;&nbsp;
+        <select id="page" >
+            <option  value="4">4条</option>
+            <option  value="8">8条</option>
+        </select>-->
+    </form>
+
+<iframe src="" name="iframe_a" height="500" width="1000">
+    
+</iframe>
+
+
+    <script type="text/javascript">
+
+     window.alert = function(name){
+       var iframe = document.createElement("IFRAME");
+       iframe.style.display="none";
+       iframe.setAttribute("src", 'data:text/plain,');
+       document.documentElement.appendChild(iframe);
+       window.frames[0].window.alert(name);
+       iframe.parentNode.removeChild(iframe);
+    }
+
+    function display_alert()
+    {
+        alert("确认提交该接口吗？")
+    }
+    </script>
+</form><br/>
+</body>
+</html>

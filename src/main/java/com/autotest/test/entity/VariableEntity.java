@@ -10,7 +10,7 @@ import java.io.Serializable;
 @Accessors(chain = true)    //链式结构
 @EntityScan
 
-public class ScenarioVariable implements Serializable {
+public class VariableEntity implements Serializable {
     private Integer id;
     private Integer scenarioId;
     private String variables;

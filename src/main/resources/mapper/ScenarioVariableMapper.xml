@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.autotest.test.dao.ScenarioVariable">
-    <select id="getJsonResult" resultType="com.autotest.test.entity.ScenarioVariable">
-        select * from scenario_variable
+<mapper namespace="com.autotest.test.dao.VariableMapper">
+    <select id="getJsonResult" resultType="com.autotest.test.entity.VariableEntity">
+        <!--select * from scenario_variable-->
+        select * from scenario_variable where id = #{id}
     </select>
+
+    <insert id="getInsert" parameterType="com.autotest.test.entity.VariableEntity">
+        INSERT INTO scenario_variable VALUES (6,3,"doinsert")
+    </insert>
+
+    <delete id="getDelete" parameterType="com.autotest.test.entity.VariableEntity">
+        DELETE FROM scenario_variable WHERE `id` = '3'
+    </delete>
+
 </mapper>

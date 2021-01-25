@@ -2,27 +2,53 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.autotest.test.dao.ApiMapper">
 
-    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
+    <!--<select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
         select * from scenario_variable where id = #{id}
-    </select>
+    </select>-->
 
-    <select id="queryApi" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
-        select * from scenario_variable
+    <select id="queryId" parameterType="int" resultType="com.autotest.test.entity.ApiEntity">
+        select * from api
         <where>
             <if test="id != null">
                 id = #{id}
             </if>
-            <if test="app != null">
-                app = #{app}
+        </where>
+    </select>
+
+    <select id="queryName" parameterType="String" resultType="com.autotest.test.entity.ApiEntity" >
+        select * from api
+        <where>
+            <if test="name != null">
+                name = #{name}
             </if>
         </where>
     </select>
 
+    <select id="queryCompose" parameterType="String" resultType="com.autotest.test.entity.ApiEntity" >
+        select * from api
+        <where>
+            <if test="url !=null and requestMethod != null" >
+                url=#{url} and request_method = #{requestMethod}
+            </if>
+        </where>
+    </select>
+
+    <resultMap id="apiEntityList" type="com.autotest.test.entity.ApiEntity">
+       <!-- <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="username" column="username" jdbcType="VARCHAR"/>
+        <result property="sex" column="sex" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>-->
+    </resultMap>
+
+    <select id="queryPage" parameterType="String" resultMap="apiEntityList" >
+        select * from api
+    </select>
+
 
     <insert id="saveApi" parameterType="com.autotest.test.entity.ApiEntity">
-        INSERT INTO api (id, app,name,describer,url,request_method,,param,content_Type,header,create_time)
-        VALUES (#{id}, 值2,....)
+        INSERT INTO scenario_variable VALUES (6,3,"doinsert")
+        <!--INSERT INTO api (id, app,name,describer,url,request_method,,param,content_Type,header,create_time)
+        VALUES (#{id}, 值2,....)-->
     </insert>
-
 
 </mapper>
