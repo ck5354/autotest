@@ -36,9 +36,9 @@ public class Application implements ApplicationContextAware
         this.applicationContext = applicationContext;
     }
 
-    @Bean
+    /*@Bean
     Filter filter() {
         MyFilter myFilter = new MyFilter();
         return myFilter;
-    }
+    }*/
 }
