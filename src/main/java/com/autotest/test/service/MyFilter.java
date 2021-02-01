@@ -26,7 +26,6 @@ public class MyFilter implements Filter {
             response.setCharacterEncoding("GBK");
             response.getWriter().println("这个是 跳转 接口");
         }
-
 //        chain.doFilter(request,response);
 
     }
