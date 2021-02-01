@@ -15,7 +15,6 @@ public class ApiService {
     @Autowired
     public ApiMapper apiMapper;
 
-
     public ApiEntity qureyId(int id) {
         return apiMapper.queryId(id);
     }
