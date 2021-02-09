@@ -40,10 +40,24 @@
         <result property="address" column="address" jdbcType="VARCHAR"/>-->
     </resultMap>
 
-    <select id="queryPage" parameterType="String" resultMap="apiEntityList" >
+    <select id="queryPage" parameterType="String" resultMap="apiEntityList">
         select * from api
     </select>
 
+    <insert id="saveInfo" parameterType="com.autotest.test.entity.ApiEntity">
+        insert into api (app,name,describer,url,request_method,content_Type,header,param)
+        values (#{app},#{name},#{describer},#{url},#{requestMethod},#{contentType},#{header},#{param})
+        <!--insert into api (app,name,url)values(#{app},#{name},#{url})-->
+    </insert>
+
+    <delete id="deleteInfo" parameterType="com.autotest.test.entity.ApiEntity">
+        delete from api
+        <where>
+            <if test="id != null or name!=null or app!=null">
+                id=#{id} or name=#{name} or app=#{app}
+            </if>
+        </where>
+    </delete>
 
     <insert id="saveApi" parameterType="com.autotest.test.entity.ApiEntity">
         INSERT INTO scenario_variable VALUES (6,3,"doinsert")

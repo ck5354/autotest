@@ -94,4 +94,30 @@ public class AutotestController {
             return pageInfo.getList();
         }
     }
+
+    @RequestMapping("/saveInfo")
+    @ResponseBody
+    public String saveInfo(@RequestParam(name = "app")int app, @RequestParam(name = "name")String name, @RequestParam(name = "describer")String describer,@RequestParam(name = "url")String url,@RequestParam(name = "requestMethod")String requestMethod,@RequestParam(name = "contentType")String contentType,@RequestParam(name = "header")String header,@RequestParam(name = "param")String param) {
+        int rows = apiService.saveInfo(app,name,describer,url,requestMethod,contentType,header,param);
+        if(rows > 0){
+            return "保存"+rows+"条数据";
+        }else if(apiService.saveInfo(app,name,describer,url,requestMethod,contentType,header,param) == 0){
+            return "保存0条数据";
+        }else{
+            return "保存异常";
+        }
+    }
+
+    @RequestMapping("/deleteInfo")
+    @ResponseBody
+    public String deleteInfo(@RequestParam(name = "id")int id,@RequestParam(name = "app")int app, @RequestParam(name = "name")String name) {
+        int rows = apiService.deleteInfo(id,app,name);
+        if(rows > 0) {
+            return "删除"+rows+"条数据";
+        }else if(rows == 0){
+            return "未有要删除的数据";
+        }else{
+            return "删除异常";
+        }
+    }
 }
