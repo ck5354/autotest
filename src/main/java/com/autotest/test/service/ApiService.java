@@ -31,5 +31,13 @@ public class ApiService {
         return apiMapper.queryPage();
     }
 
+    public int saveInfo(int app, String name, String describer, String url, String requestMethod, String contentType, String header, String param){
+        return apiMapper.saveInfo(app,name,describer,url,requestMethod,contentType,header,param);
+    }
+
+    public int deleteInfo(int id,int app,String name){
+        return apiMapper.deleteInfo(id,app,name);
+    }
+
 }
 
