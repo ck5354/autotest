@@ -48,7 +48,7 @@ public class Descartes {
         List<List<String>> list = new ArrayList<List<String>>();
         List<String> listSub1 = new ArrayList<String>();
         List<String> listSub2 = new ArrayList<String>();
-        List<String> listSub3 = new ArrayList<String>();
+
         List<String> listSub4 = new ArrayList<String>();
 
         listSub1.add("用户名1");
@@ -58,6 +58,9 @@ public class Descartes {
 
         listSub2.add("密码1");
         listSub2.add("密码2");
+        List<String> listSub3 = new ArrayList<String>();
+        listSub3.add("结果1");
+        listSub3.add("结果2");
 
 
         /*listSub3.add("a");
@@ -72,6 +75,7 @@ public class Descartes {
 
         list.add(listSub1);
         list.add(listSub2);
+        list.add(listSub3);
         /*list.add(listSub3);
         list.add(listSub4);*/
 
