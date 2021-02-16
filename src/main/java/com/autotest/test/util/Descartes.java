@@ -1,7 +1,9 @@
 package com.autotest.test.util;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Descartes {
     private static void descartes(List<List<String>> scenarioList, List<List<String>> result, int layer, List<String> curList) {
@@ -51,13 +53,12 @@ public class Descartes {
         List<String> listSub3 = new ArrayList<String>();
         List<String> listSub4 = new ArrayList<String>();
 
-        listSub1.add("用户名1");
-        listSub1.add("用户名2");
-        listSub1.add("用户名3");
+        listSub1.add("1");
+        listSub1.add("2");
+        listSub1.add("3");
 
-
-        listSub2.add("密码1");
-        listSub2.add("密码2");
+        listSub2.add("a");
+        listSub2.add("b");
 
 
         /*listSub3.add("a");
@@ -79,7 +80,6 @@ public class Descartes {
         descartes(list, result, 0, new ArrayList<String>());
         System.out.println("========");
         System.out.println(result);
-
         //System.out.println(JSON.toJSONString(result));
     }
 }

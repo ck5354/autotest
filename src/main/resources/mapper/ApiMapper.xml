@@ -45,24 +45,53 @@
     </select>
 
     <insert id="saveInfo" parameterType="com.autotest.test.entity.ApiEntity">
-        insert into api (app,name,describer,url,request_method,content_Type,header,param)
-        values (#{app},#{name},#{describer},#{url},#{requestMethod},#{contentType},#{header},#{param})
+        <!--insert into api (app,name,describer)
+        values (#{app},#{name},#{describer})-->
+        insert into api (app,name,describer,scheme,url,request_method,content_Type,header,param,body)
+        values (#{app},#{name},#{describer},#{scheme},#{url},#{requestMethod},#{contentType},#{header},#{param},#{body})
         <!--insert into api (app,name,url)values(#{app},#{name},#{url})-->
     </insert>
 
     <delete id="deleteInfo" parameterType="com.autotest.test.entity.ApiEntity">
         delete from api
         <where>
+            <if test="id!=null">
+                id in
+            </if>
+        </where>
+        <foreach item="id" collection="list" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+
+        <!--<where>
             <if test="id != null or name!=null or app!=null">
                 id=#{id} or name=#{name} or app=#{app}
             </if>
-        </where>
+        </where>-->
     </delete>
 
-    <insert id="saveApi" parameterType="com.autotest.test.entity.ApiEntity">
-        INSERT INTO scenario_variable VALUES (6,3,"doinsert")
-        <!--INSERT INTO api (id, app,name,describer,url,request_method,,param,content_Type,header,create_time)
-        VALUES (#{id}, 值2,....)-->
-    </insert>
+    <delete id="deleteById" parameterType="com.autotest.test.entity.ApiEntity">
+    delete from api
+    <where>
+        <if test="id!=null">
+            id = #{id}
+        </if>
+    </where>
+    </delete>
+
+
+    <update id="updateInfo" parameterType="map">
+        update api
+        <set>
+            <if test="name!=null">
+                name = #{name},
+            </if>
+            <if test="app!=null">
+                app = #{app},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
 
 </mapper>

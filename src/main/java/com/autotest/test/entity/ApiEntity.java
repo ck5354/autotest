@@ -12,7 +12,7 @@ import java.util.Date;
 @EntityScan
 
 public class ApiEntity implements Serializable {
-    private Integer id;
+    private int id;
     private Integer app;
     private String name;
     private String describer;

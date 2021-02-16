@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
+import java.util.Map;
 
 @Mapper
 public interface ApiMapper {
@@ -14,12 +15,12 @@ public interface ApiMapper {
     ApiEntity queryName(String name);
     List queryCompose(String url,String requestMethod );
     List<ApiEntity> queryPage();
-    int saveInfo(int app, String name, String describer, String url, String requestMethod, String contentType, String header, String param );
-    int deleteInfo(int id,int app,String name);
+    int saveInfo(Map data);
+    //int deleteInfo(int id,int app,String name);
+    int deleteInfo(List id);
+    int deleteById(Object id);
+    int updateInfo(Map map);
 
-    int saveApi(ApiEntity apiEntity);
-    int deleteApi(int id);
-    int updateApi(ApiEntity apiEntity);
     List<ApiEntity> queryApis(ApiEntity apiEntity);
 
 }
